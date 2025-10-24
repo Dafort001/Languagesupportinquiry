@@ -8,7 +8,7 @@ interface HapticButtonProps extends ButtonProps {
 }
 
 export const HapticButton = forwardRef<HTMLButtonElement, HapticButtonProps>(
-  ({ hapticStyle = 'light', onClick, children, ...props }, ref) => {
+  ({ hapticStyle = 'light', onClick, className, children, ...props }, ref) => {
     const { trigger } = useHaptic();
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -18,7 +18,12 @@ export const HapticButton = forwardRef<HTMLButtonElement, HapticButtonProps>(
 
     return (
       <motion.div whileTap={{ scale: 0.95 }}>
-        <Button ref={ref} onClick={handleClick} {...props}>
+        <Button 
+          ref={ref} 
+          onClick={handleClick} 
+          className={className}
+          {...props}
+        >
           {children}
         </Button>
       </motion.div>

@@ -208,7 +208,7 @@ export function DeliveryScreen() {
                   key={photo.id}
                   className={`bg-white rounded-lg border-2 overflow-hidden transition-all cursor-pointer ${
                     photo.selected
-                      ? 'border-[#3B82F6] ring-2 ring-blue-100'
+                      ? 'border-[#4A5849] ring-2 ring-[#4A5849]/20'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                   onClick={() => toggleSelection(photo.id)}
@@ -222,7 +222,7 @@ export function DeliveryScreen() {
                     <div
                       className={`absolute top-3 left-3 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
                         photo.selected
-                          ? 'bg-[#3B82F6] border-[#3B82F6]'
+                          ? 'bg-[#4A5849] border-[#4A5849]'
                           : 'bg-white/90 border-gray-300'
                       }`}
                     >
@@ -276,7 +276,7 @@ export function DeliveryScreen() {
                     </div>
                   </div>
                   <Button
-                    className="w-full bg-[#3B82F6] hover:bg-[#2563EB] text-white"
+                    className="w-full bg-[#4A5849] hover:bg-[#3A4839] text-white"
                     size="lg"
                     onClick={downloadSelected}
                     style={{ fontSize: '16px' }}

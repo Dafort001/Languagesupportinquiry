@@ -56,7 +56,7 @@ export function PaymentScreen() {
                   <div
                     className={`flex items-center space-x-3 p-4 rounded-lg border-2 cursor-pointer transition-colors ${
                       paymentMethod === 'card'
-                        ? 'border-[#3B82F6] bg-blue-50'
+                        ? 'border-[#4A5849] bg-[#4A5849]/10'
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                     onClick={() => setPaymentMethod('card')}
@@ -70,7 +70,7 @@ export function PaymentScreen() {
                   <div
                     className={`flex items-center space-x-3 p-4 rounded-lg border-2 cursor-pointer transition-colors ${
                       paymentMethod === 'invoice'
-                        ? 'border-[#3B82F6] bg-blue-50'
+                        ? 'border-[#4A5849] bg-[#4A5849]/10'
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                     onClick={() => setPaymentMethod('invoice')}
@@ -144,10 +144,10 @@ export function PaymentScreen() {
                 </div>
 
                 {/* Stripe Badge */}
-                <div className="mt-6 pt-6 border-t border-gray-200">
+                <div className="mt-6 pt-4 border-t">
                   <div className="flex items-center justify-center text-gray-500">
                     <span style={{ fontSize: '12px' }}>Powered by</span>
-                    <span style={{ fontSize: '14px' }} className="ml-2 text-[#635BFF] font-semibold">
+                    <span style={{ fontSize: '14px' }} className="ml-2 text-[#635BFF]">
                       Stripe
                     </span>
                   </div>
@@ -225,13 +225,13 @@ export function PaymentScreen() {
 
               <div className="flex justify-between items-center mb-6">
                 <span style={{ fontSize: '16px' }} className="text-gray-900">Gesamt</span>
-                <span style={{ fontSize: '28px' }} className="text-[#3B82F6]">
+                <span style={{ fontSize: '28px' }} className="text-[#4A5849]">
                   {orderSummary.total.toFixed(2)} €
                 </span>
               </div>
 
               <Button
-                className="w-full bg-[#3B82F6] hover:bg-[#2563EB] text-white"
+                className="w-full bg-[#4A5849] hover:bg-[#3A4839] text-white"
                 size="lg"
                 onClick={handlePayment}
                 disabled={isProcessing}

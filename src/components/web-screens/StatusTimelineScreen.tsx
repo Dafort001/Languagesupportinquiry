@@ -54,7 +54,7 @@ export function StatusTimelineScreen() {
 
   const statusConfig: Record<TimelineStatus, { bg: string; text: string; border: string }> = {
     completed: { bg: 'bg-green-500', text: 'text-white', border: 'border-green-500' },
-    active: { bg: 'bg-[#3B82F6]', text: 'text-white', border: 'border-[#3B82F6]' },
+    active: { bg: 'bg-[#4A5849]', text: 'text-white', border: 'border-[#4A5849]' },
     pending: { bg: 'bg-gray-200', text: 'text-gray-400', border: 'border-gray-300' },
   };
 
@@ -78,7 +78,7 @@ export function StatusTimelineScreen() {
                 </p>
               </div>
             </div>
-            <Badge className="bg-blue-50 text-[#3B82F6] border-blue-200" style={{ fontSize: '14px' }}>
+            <Badge className="bg-[#4A5849]/10 text-[#4A5849] border-[#4A5849]/30" style={{ fontSize: '14px' }}>
               In Bearbeitung
             </Badge>
           </div>
@@ -89,8 +89,8 @@ export function StatusTimelineScreen() {
         {/* Estimated Delivery */}
         <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
           <div className="flex items-start gap-4">
-            <div className="bg-blue-50 rounded-full p-3">
-              <Clock strokeWidth={1.5} className="w-6 h-6 text-[#3B82F6]" />
+            <div className="bg-[#4A5849]/10 rounded-full p-3">
+              <Clock strokeWidth={1.5} className="w-6 h-6 text-[#4A5849]" />
             </div>
             <div className="flex-1">
               <h2 style={{ fontSize: '18px' }} className="text-gray-900 mb-1">
@@ -110,7 +110,7 @@ export function StatusTimelineScreen() {
               <div className="flex items-center gap-2">
                 <div className="flex-1 bg-gray-200 rounded-full h-2 overflow-hidden">
                   <div
-                    className="bg-[#3B82F6] h-full rounded-full transition-all"
+                    className="bg-[#4A5849] h-full rounded-full transition-all"
                     style={{ width: '60%' }}
                   />
                 </div>
@@ -171,9 +171,9 @@ export function StatusTimelineScreen() {
 
                       {/* Active Step Actions */}
                       {step.status === 'active' && (
-                        <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                        <div className="mt-4 p-4 bg-[#4A5849]/10 rounded-lg border border-[#4A5849]/30">
                           <div className="flex items-start gap-3">
-                            <Sparkles strokeWidth={1.5} className="w-5 h-5 text-[#3B82F6] mt-0.5" />
+                            <Sparkles strokeWidth={1.5} className="w-5 h-5 text-[#4A5849] mt-0.5" />
                             <div>
                               <p style={{ fontSize: '14px' }} className="text-gray-900 mb-1">
                                 Bearbeitung in vollem Gange
@@ -199,7 +199,7 @@ export function StatusTimelineScreen() {
           <div className="flex items-start gap-4">
             <div className="bg-white rounded-full p-2">
               <svg
-                className="w-5 h-5 text-[#3B82F6]"
+                className="w-5 h-5 text-[#4A5849]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

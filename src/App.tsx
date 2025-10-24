@@ -9,7 +9,7 @@ import { WebPortalApp } from './components/WebPortalApp';
 import { BottomNav } from './components/BottomNav';
 import { useHaptic } from './hooks/useHaptic';
 
-export type Screen = 'splash' | 'camera' | 'gallery' | 'upload';
+export type Screen = 'splash' | 'camera' | 'upload' | 'gallery';
 export type AppMode = 'mobile' | 'web';
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
   const photoCount = 6;
 
   // Screen-Reihenfolge für Swipe-Navigation
-  const screenOrder: Screen[] = ['splash', 'camera', 'gallery', 'upload'];
+  const screenOrder: Screen[] = ['splash', 'camera', 'upload', 'gallery'];
 
   const handleDragEnd = (_: any, info: PanInfo) => {
     const currentIndex = screenOrder.indexOf(currentScreen);
@@ -48,28 +48,31 @@ export default function App() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-8">
       {/* Mode Switcher (Development) */}
-      <div className="fixed top-4 right-4 z-50 flex gap-2">
+      <div className="absolute top-4 right-4 z-50 flex gap-2 bg-white/90 backdrop-blur-sm p-2 rounded-xl shadow-lg">
+        {/* Mode Switcher */}
         <button
           onClick={() => setAppMode('mobile')}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+          className={`px-4 py-2 rounded-lg transition-all ${
             appMode === 'mobile'
               ? 'bg-[#3B82F6] text-white shadow-lg'
-              : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
           }`}
           style={{ fontSize: '14px' }}
         >
-          📱 iPhone App
+          📱 iPhone
         </button>
+
+        {/* Web Mode */}
         <button
           onClick={() => setAppMode('web')}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+          className={`px-4 py-2 rounded-lg transition-all ${
             appMode === 'web'
-              ? 'bg-[#3B82F6] text-white shadow-lg'
-              : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+              ? 'bg-[#4A5849] text-white shadow-lg'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
           }`}
           style={{ fontSize: '14px' }}
         >
-          💻 Web Portal
+          💻 Web
         </button>
       </div>
 
@@ -109,6 +112,18 @@ export default function App() {
                     <CameraScreen onNavigate={handleNavigate} />
                   </motion.div>
                 )}
+                {currentScreen === 'upload' && (
+                  <motion.div
+                    key="upload"
+                    initial={{ x: '100%' }}
+                    animate={{ x: 0 }}
+                    exit={{ x: '-100%' }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                    className="h-full"
+                  >
+                    <UploadScreen onNavigate={handleNavigate} />
+                  </motion.div>
+                )}
                 {currentScreen === 'gallery' && (
                   <motion.div
                     key="gallery"
@@ -119,18 +134,6 @@ export default function App() {
                     className="h-full"
                   >
                     <GalleryScreen onNavigate={handleNavigate} />
-                  </motion.div>
-                )}
-                {currentScreen === 'upload' && (
-                  <motion.div
-                    key="upload"
-                    initial={{ y: '100%' }}
-                    animate={{ y: 0 }}
-                    exit={{ y: '100%' }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                    className="h-full"
-                  >
-                    <UploadScreen onNavigate={handleNavigate} />
                   </motion.div>
                 )}
               </AnimatePresence>

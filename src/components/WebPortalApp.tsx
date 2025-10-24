@@ -53,7 +53,7 @@ export function WebPortalApp({ initialScreen = 'uploads' }: WebPortalAppProps) {
                 onClick={() => setCurrentScreen(screen)}
                 className={`px-3 py-1 text-xs rounded transition-colors whitespace-nowrap ${
                   currentScreen === screen
-                    ? 'bg-[#3B82F6] text-white'
+                    ? 'bg-[#4A5849] text-white'
                     : 'bg-gray-800 hover:bg-gray-700'
                 }`}
               >

@@ -45,7 +45,7 @@ const mockProjects: UploadProject[] = [
 ];
 
 const statusConfig: Record<UploadStatus, { color: string; bg: string }> = {
-  'Neu': { color: 'text-blue-600', bg: 'bg-blue-50 border-blue-200' },
+  'Neu': { color: 'text-[#4A5849]', bg: 'bg-[#4A5849]/10 border-[#4A5849]/30' },
   'In Bearbeitung': { color: 'text-amber-600', bg: 'bg-amber-50 border-amber-200' },
   'Fertig': { color: 'text-green-600', bg: 'bg-green-50 border-green-200' },
 };
@@ -72,7 +72,7 @@ export function UploadsOverviewScreen() {
               </p>
             </div>
             <Button 
-              className="bg-[#3B82F6] hover:bg-[#2563EB] text-white"
+              className="bg-[#4A5849] hover:bg-[#3A4839] text-white"
               style={{ fontSize: '16px' }}
             >
               <Upload strokeWidth={1.5} className="w-4 h-4 mr-2" />
@@ -96,7 +96,7 @@ export function UploadsOverviewScreen() {
                 onClick={() => setSelectedFilter(filter)}
                 className={`px-3 py-1.5 rounded-lg transition-colors ${
                   selectedFilter === filter
-                    ? 'bg-[#3B82F6] text-white'
+                    ? 'bg-[#4A5849] text-white'
                     : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
                 }`}
                 style={{ fontSize: '14px' }}
@@ -170,7 +170,7 @@ export function UploadsOverviewScreen() {
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="text-[#3B82F6] hover:bg-blue-50"
+                    className="text-[#4A5849] hover:bg-[#4A5849]/10"
                     style={{ fontSize: '14px' }}
                   >
                     Details

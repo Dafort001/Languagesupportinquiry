@@ -104,7 +104,7 @@ export function GallerySelectionScreen() {
                 </p>
               </div>
             </div>
-            <Badge className="bg-blue-50 text-[#3B82F6] border-blue-200" style={{ fontSize: '14px' }}>
+            <Badge className="bg-[#4A5849]/10 text-[#4A5849] border-[#4A5849]/30" style={{ fontSize: '14px' }}>
               {selectedCount} von {photos.length} ausgewählt
             </Badge>
           </div>
@@ -121,7 +121,7 @@ export function GallerySelectionScreen() {
                   key={photo.id}
                   className={`relative aspect-square rounded-lg overflow-hidden cursor-pointer transition-all ${
                     photo.selected
-                      ? 'ring-4 ring-[#3B82F6] ring-offset-2'
+                      ? 'ring-4 ring-[#4A5849] ring-offset-2'
                       : 'opacity-60 hover:opacity-100'
                   }`}
                   onClick={() => {
@@ -139,7 +139,7 @@ export function GallerySelectionScreen() {
                   <div
                     className={`absolute top-2 left-2 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
                       photo.selected
-                        ? 'bg-[#3B82F6] border-[#3B82F6]'
+                        ? 'bg-[#4A5849] border-[#4A5849]'
                         : 'bg-white/80 border-gray-300'
                     }`}
                   >
@@ -157,7 +157,7 @@ export function GallerySelectionScreen() {
                   {/* Comment Indicator */}
                   {photo.comment && (
                     <div className="absolute bottom-2 right-2 bg-white/90 rounded-full p-1.5">
-                      <MessageSquare strokeWidth={1.5} className="w-3 h-3 text-[#3B82F6]" />
+                      <MessageSquare strokeWidth={1.5} className="w-3 h-3 text-[#4A5849]" />
                     </div>
                   )}
                 </div>
@@ -191,7 +191,7 @@ export function GallerySelectionScreen() {
                 <span style={{ fontSize: '16px' }} className="text-gray-900">
                   Gesamtpreis
                 </span>
-                <span style={{ fontSize: '28px' }} className="text-[#3B82F6]">
+                <span style={{ fontSize: '28px' }} className="text-[#4A5849]">
                   {totalPrice.toFixed(2)} €
                 </span>
               </div>
@@ -201,7 +201,7 @@ export function GallerySelectionScreen() {
             {selectedPhoto && (
               <div className="bg-white rounded-lg border border-gray-200 p-5">
                 <h3 style={{ fontSize: '16px' }} className="text-gray-900 mb-4 flex items-center">
-                  <Sparkles strokeWidth={1.5} className="w-4 h-4 mr-2 text-[#3B82F6]" />
+                  <Sparkles strokeWidth={1.5} className="w-4 h-4 mr-2 text-[#4A5849]" />
                   Bearbeitungsstil
                 </h3>
                 <Select
@@ -237,7 +237,7 @@ export function GallerySelectionScreen() {
 
             {/* Action Button */}
             <Button
-              className="w-full bg-[#3B82F6] hover:bg-[#2563EB] text-white"
+              className="w-full bg-[#4A5849] hover:bg-[#3A4839] text-white"
               size="lg"
               disabled={selectedCount === 0}
               style={{ fontSize: '16px' }}

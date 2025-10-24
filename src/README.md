@@ -121,7 +121,7 @@ Oder deploye auf **Replit/Vercel/Netlify** für automatisches HTTPS.
 
 ### Farben
 ```css
---pix-blue: #3B82F6;        /* Primärfarbe */
+--pix-green-grey: #4A5849;  /* Primärfarbe (Grün-Grau) */
 --background: #FFFFFF;       /* Haupthintergrund */
 --text-primary: #000000;     /* Haupttext */
 --text-secondary: #6B7280;   /* Sekundärtext */
@@ -187,7 +187,7 @@ pix-immo-capture/
 ├── hooks/
 │   └── useHaptic.ts          # Vibration API Hook
 ├── styles/
-│   └── globals.css           # Tailwind + Pix-Blau Tokens
+│   └── globals.css           # Tailwind + Grün-Grau Tokens
 ├── guidelines/
 │   └── Guidelines.md         # Design Brief
 ├── App.tsx                   # Root Component (Mode-Switcher)

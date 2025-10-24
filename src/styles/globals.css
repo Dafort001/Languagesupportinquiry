@@ -4,9 +4,9 @@
 
 :root {
   /* pix.immo Branding Colors */
-  --pix-blue: #3B82F6;
-  --pix-blue-hover: #2563EB;
-  --pix-blue-light: #DBEAFE;
+  --pix-green-grey: #4A5849;
+  --pix-green-grey-hover: #3A4839;
+  --pix-green-grey-light: #E8EBE9;
   
   /* Typography Sizes (Guidelines: 14-16pt Text, 22-28pt Titles) */
   --text-sm: 0.875rem;   /* 14px */
@@ -191,7 +191,7 @@
 
     button {
       font-size: var(--text-base);
-      font-weight: var(--font-weight-medium);
+      font-weight: var(--font-weight-normal);
       line-height: 1.5;
     }
 
@@ -209,23 +209,86 @@ html {
 
 /* pix.immo Custom Utilities */
 @layer utilities {
-  .bg-pix-blue {
-    background-color: var(--pix-blue);
+  .bg-pix-green-grey {
+    background-color: var(--pix-green-grey);
   }
   
-  .bg-pix-blue-hover:hover {
-    background-color: var(--pix-blue-hover);
+  .bg-pix-green-grey-hover:hover {
+    background-color: var(--pix-green-grey-hover);
   }
   
-  .text-pix-blue {
-    color: var(--pix-blue);
+  .text-pix-green-grey {
+    color: var(--pix-green-grey);
   }
   
-  .border-pix-blue {
-    border-color: var(--pix-blue);
+  .border-pix-green-grey {
+    border-color: var(--pix-green-grey);
   }
   
-  .ring-pix-blue {
-    --tw-ring-color: var(--pix-blue);
+  .ring-pix-green-grey {
+    --tw-ring-color: var(--pix-green-grey);
+  }
+}
+
+/* shadcn/ui Component Overrides - Guidelines Compliance */
+@layer components {
+  /* Button Typography Override
+   * Problem: shadcn Button hat text-sm (14px) + font-medium (500) als default
+   * Guidelines: 16px (text-base) + font-weight: 400 (normal)
+   * Lösung: !important für höchste Priorität
+   */
+  button[class*="inline-flex"],
+  [data-slot="button"] {
+    font-size: var(--text-base) !important;     /* 16px instead of 14px */
+    font-weight: var(--font-weight-normal) !important;  /* 400 instead of 500 */
+    line-height: 1.5 !important;
+  }
+  
+  /* Badge Typography (falls verwendet) */
+  [data-slot="badge"] {
+    font-size: 0.75rem !important;  /* 12px */
+    font-weight: var(--font-weight-normal) !important;
+  }
+}
+
+/* Custom Scrollbar für Bottom Sheets - IMMER SICHTBAR */
+@layer utilities {
+  /* Firefox Scrollbar - permanent sichtbar */
+  .help-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #4A5849 #f3f4f6;
+    scrollbar-gutter: stable; /* Reserviert Platz für Scrollbar */
+  }
+  
+  /* Webkit Scrollbar (Chrome, Safari, Edge) - PERMANENT SICHTBAR */
+  .help-scrollbar::-webkit-scrollbar {
+    width: 8px; /* Etwas breiter für bessere Sichtbarkeit */
+    -webkit-appearance: none; /* Override system defaults */
+  }
+  
+  .help-scrollbar::-webkit-scrollbar-track {
+    background: #e5e7eb; /* Sichtbarer grauer Track */
+    border-radius: 4px;
+  }
+  
+  .help-scrollbar::-webkit-scrollbar-thumb {
+    background: #4A5849; /* Brand green-gray - permanent sichtbar */
+    border-radius: 4px;
+    min-height: 50px; /* Größerer Thumb für bessere Sichtbarkeit */
+    border: 2px solid #e5e7eb; /* Border für Kontrast */
+  }
+  
+  .help-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #3A4839; /* Darker on hover */
+    border-color: #d1d5db;
+  }
+  
+  .help-scrollbar::-webkit-scrollbar-thumb:active {
+    background: #2A3829; /* Even darker when dragging */
+  }
+  
+  /* Force scrollbar to always show (not overlay) */
+  .help-scrollbar::-webkit-scrollbar-button {
+    display: none;
   }
 }

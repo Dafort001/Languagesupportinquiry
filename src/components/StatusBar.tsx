@@ -33,11 +33,11 @@ export function StatusBar({ variant = 'dark' }: StatusBarProps) {
         </div>
 
         {/* WiFi */}
-        <Wifi className="w-4 h-4 ml-1" strokeWidth={2} />
+        <Wifi className="w-4 h-4 ml-1" strokeWidth={1.5} />
 
         {/* Batterie */}
         <div className="ml-1 flex items-center gap-0.5">
-          <Battery className="w-6 h-4" strokeWidth={2} fill="currentColor" />
+          <Battery className="w-6 h-4" strokeWidth={1.5} fill="currentColor" />
         </div>
       </div>
     </div>

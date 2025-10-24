@@ -128,7 +128,7 @@ export function RevisionScreen() {
             {/* Instructions */}
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-5">
               <div className="flex items-start gap-3">
-                <AlertCircle strokeWidth={1.5} className="w-5 h-5 text-[#3B82F6] mt-0.5 flex-shrink-0" />
+                <AlertCircle strokeWidth={1.5} className="w-5 h-5 text-[#4A5849] mt-0.5 flex-shrink-0" />
                 <div>
                   <h2 style={{ fontSize: '16px' }} className="text-gray-900 mb-1">
                     So funktioniert's
@@ -154,7 +154,7 @@ export function RevisionScreen() {
                     <div
                       className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all border-2 ${
                         photo.selected
-                          ? 'border-[#3B82F6] ring-2 ring-blue-100'
+                          ? 'border-[#4A5849] ring-2 ring-[#4A5849]/20'
                           : 'border-gray-200 hover:border-gray-300'
                       }`}
                       onClick={() => togglePhotoSelection(photo.id)}
@@ -169,7 +169,7 @@ export function RevisionScreen() {
                       <div
                         className={`absolute top-2 left-2 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
                           photo.selected
-                            ? 'bg-[#3B82F6] border-[#3B82F6]'
+                            ? 'bg-[#4A5849] border-[#4A5849]'
                             : 'bg-white/90 border-gray-300'
                         }`}
                       >
@@ -187,7 +187,7 @@ export function RevisionScreen() {
                       {/* Comment Indicator */}
                       {photo.comment && (
                         <div className="absolute bottom-2 right-2 bg-white/90 rounded-full p-1.5">
-                          <MessageSquare strokeWidth={1.5} className="w-3 h-3 text-[#3B82F6]" />
+                          <MessageSquare strokeWidth={1.5} className="w-3 h-3 text-[#4A5849]" />
                         </div>
                       )}
                     </div>
@@ -242,7 +242,7 @@ export function RevisionScreen() {
                     key={option.id}
                     className={`flex items-center space-x-3 p-3 rounded-lg border-2 cursor-pointer transition-colors ${
                       selectedOptions.includes(option.id)
-                        ? 'border-[#3B82F6] bg-blue-50'
+                        ? 'border-[#4A5849] bg-[#4A5849]/10'
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                     onClick={() => toggleOption(option.id)}
@@ -293,7 +293,7 @@ export function RevisionScreen() {
 
               {/* Submit Button */}
               <Button
-                className="w-full bg-[#3B82F6] hover:bg-[#2563EB] text-white"
+                className="w-full bg-[#4A5849] hover:bg-[#3A4839] text-white"
                 size="lg"
                 onClick={handleSubmit}
                 disabled={!canSubmit || isSubmitting}
